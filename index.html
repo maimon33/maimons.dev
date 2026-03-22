@@ -3,268 +3,470 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Assi Maimon - Software Engineer and Open Source Contributor">
-    <title>Assi Maimon | Software Engineer</title>
+    <meta name="description" content="Assi Maimon — DevOps Engineer and Open Source Builder">
+    <title>Assi Maimon</title>
     <style>
         :root {
-            --primary: #2563eb;
+            --blue: #2563eb;
+            --blue-dark: #1d4ed8;
             --dark: #0f172a;
-            --light: #f8fafc;
-            --text-main: #334155;
-            --text-light: #64748b;
-            --bg-card: #ffffff;
-            --radius: 8px;
-            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --slate: #1e293b;
+            --text: #334155;
+            --muted: #64748b;
+            --border: #e2e8f0;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --radius: 12px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--light);
-            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
         }
 
-        /* Header / Hero */
+        /* ── Hero ── */
         header {
-            background-color: var(--bg-card);
-            border-bottom: 1px solid #e2e8f0;
-            padding: 4rem 1rem;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--slate) 100%);
+            color: white;
+            padding: 5rem 1.5rem 4rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
+
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 60% 0%, rgba(37,99,235,0.35) 0%, transparent 65%);
+        }
+
+        .hero-inner { position: relative; max-width: 680px; margin: 0 auto; }
 
         .avatar {
-            width: 120px;
-            height: 120px;
-            background-color: var(--primary);
-            color: white;
+            width: 96px; height: 96px;
+            background: linear-gradient(135deg, var(--blue), #7c3aed);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            font-weight: bold;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.2rem; font-weight: 700; color: white;
             margin: 0 auto 1.5rem;
+            box-shadow: 0 0 0 4px rgba(255,255,255,0.1);
         }
 
-        h1 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-        }
+        h1 { font-size: 2.6rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
 
         .subtitle {
-            font-size: 1.25rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
+            font-size: 1.1rem; color: #94a3b8; margin-bottom: 2rem;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
+        .links {
+            display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
         }
 
-        .social-links a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius);
-            background-color: #f1f5f9;
+        .links a {
+            text-decoration: none; color: #cbd5e1;
+            padding: 0.45rem 1.1rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 999px;
+            font-size: 0.9rem; font-weight: 500;
             transition: all 0.2s;
+            display: flex; align-items: center; gap: 0.4rem;
         }
 
-        .social-links a:hover {
-            background-color: var(--primary);
-            color: white;
+        .links a:hover { background: rgba(255,255,255,0.1); color: white; border-color: rgba(255,255,255,0.3); }
+
+        /* ── Main ── */
+        main { max-width: 980px; margin: 0 auto; padding: 4rem 1.5rem; }
+
+        .section-label {
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+            text-transform: uppercase; color: var(--blue);
+            margin-bottom: 0.6rem;
         }
 
-        /* Main Content */
-        main {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 3rem 1rem;
-        }
+        h2 { font-size: 1.9rem; color: var(--dark); margin-bottom: 0.75rem; font-weight: 700; letter-spacing: -0.01em; }
 
-        section {
-            margin-bottom: 4rem;
-        }
+        .section-intro { color: var(--muted); max-width: 560px; margin-bottom: 2.5rem; }
 
-        h2 {
-            font-size: 1.8rem;
-            color: var(--dark);
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
-        }
+        /* ── Project Cards ── */
+        .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 1.5rem; }
 
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: var(--bg-card);
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
             border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            padding: 1.5rem;
-            transition: transform 0.2s;
-            border: 1px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            transition: box-shadow 0.2s, transform 0.2s;
+            display: flex; flex-direction: column;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
+        .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.1); transform: translateY(-3px); }
+
+        .card-banner {
+            height: 160px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .project-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .card-banner.trufo {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
         }
 
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+        .card-banner.clock {
+            background: linear-gradient(135deg, #1c1c1e 0%, #2c2c2e 100%);
         }
+
+        /* Trufo visual */
+        .trufo-visual {
+            display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;
+            position: relative;
+        }
+
+        .lock-circle {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            background: rgba(37,99,235,0.15);
+            border: 2px solid rgba(37,99,235,0.5);
+            display: flex; align-items: center; justify-content: center;
+            position: relative;
+        }
+
+        .lock-circle::before {
+            content: '';
+            position: absolute;
+            top: -22px; left: 50%; transform: translateX(-50%);
+            width: 30px; height: 22px;
+            border: 3px solid rgba(37,99,235,0.6);
+            border-bottom: none;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .lock-icon {
+            width: 20px; height: 24px;
+            background: #2563eb;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .lock-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%; transform: translate(-50%, -30%);
+            width: 6px; height: 8px;
+            border: 2px solid white;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .orbit {
+            position: absolute;
+            border: 1px dashed rgba(99,179,237,0.3);
+            border-radius: 50%;
+        }
+
+        .orbit-1 { width: 120px; height: 120px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+        .orbit-2 { width: 155px; height: 155px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+        .orbit-dot {
+            position: absolute; width: 7px; height: 7px;
+            background: #60a5fa; border-radius: 50%;
+        }
+
+        /* Clock visual */
+        .clock-visual {
+            display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;
+        }
+
+        .mac-window {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 10px;
+            width: 160px;
+            overflow: hidden;
+        }
+
+        .mac-titlebar {
+            background: rgba(255,255,255,0.06);
+            padding: 6px 10px;
+            display: flex; align-items: center; gap: 5px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .dot { width: 9px; height: 9px; border-radius: 50%; }
+        .dot-red { background: #ff5f57; }
+        .dot-yellow { background: #febc2e; }
+        .dot-green { background: #28c840; }
+
+        .mac-body {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .clock-display {
+            font-family: "SF Mono", "Fira Code", monospace;
+            font-size: 1.8rem; font-weight: 700;
+            color: white;
+            letter-spacing: 0.05em;
+        }
+
+        .clock-date {
+            font-size: 0.65rem; color: rgba(255,255,255,0.4);
+            margin-top: 2px; letter-spacing: 0.05em;
+        }
+
+        .always-on-badge {
+            margin-top: 8px;
+            display: inline-block;
+            font-size: 0.55rem; font-weight: 600;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            color: #28c840;
+            border: 1px solid rgba(40,200,64,0.4);
+            border-radius: 999px;
+            padding: 2px 7px;
+        }
+
+        /* Card body */
+        .card-body { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+
+        .card-title { font-size: 1.25rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
+
+        .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
 
         .tag {
-            background-color: #e0f2fe;
-            color: #0369a1;
-            font-size: 0.75rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 999px;
-            font-weight: 600;
+            font-size: 0.72rem; font-weight: 600;
+            padding: 0.2rem 0.6rem; border-radius: 999px;
+            background: #eff6ff; color: #1d4ed8;
         }
 
-        .project-desc {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
+        .tag.purple { background: #f5f3ff; color: #6d28d9; }
+        .tag.green  { background: #f0fdf4; color: #15803d; }
+        .tag.slate  { background: #f1f5f9; color: #475569; }
+        .tag.orange { background: #fff7ed; color: #c2410c; }
+
+        .card-desc { color: var(--muted); font-size: 0.95rem; flex-grow: 1; margin-bottom: 1.5rem; }
+
+        .feature-list {
+            list-style: none; margin-bottom: 1.5rem;
+            display: flex; flex-direction: column; gap: 0.3rem;
         }
 
-        .project-links {
-            margin-top: auto;
+        .feature-list li {
+            font-size: 0.875rem; color: var(--text);
+            display: flex; align-items: flex-start; gap: 0.5rem;
         }
 
-        .btn-outline {
-            display: inline-block;
+        .feature-list li::before { content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; }
+
+        .card-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: auto; }
+
+        .btn {
             text-decoration: none;
-            color: var(--primary);
-            border: 1px solid var(--primary);
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 1.1rem;
+            border-radius: 8px;
+            font-size: 0.875rem; font-weight: 500;
+            transition: all 0.2s;
+            display: inline-flex; align-items: center; gap: 0.4rem;
+        }
+
+        .btn-primary { background: var(--blue); color: white; border: 1px solid var(--blue); }
+        .btn-primary:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+        .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+        .btn-ghost:hover { background: var(--bg); border-color: #cbd5e1; }
+
+        /* ── About ── */
+        .about-card {
+            background: var(--card);
+            border: 1px solid var(--border);
             border-radius: var(--radius);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: background 0.2s;
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
             padding: 2rem;
-            color: var(--text-light);
-            font-size: 0.9rem;
-            border-top: 1px solid #e2e8f0;
-            margin-top: auto;
+            margin-bottom: 4rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
         }
 
-        @media (max-width: 600px) {
+        .skills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+
+        .skill-badge {
+            font-size: 0.8rem; padding: 0.3rem 0.8rem;
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: 999px; color: var(--text); font-weight: 500;
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center; padding: 2.5rem 1rem;
+            color: var(--muted); font-size: 0.875rem;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 640px) {
             h1 { font-size: 2rem; }
-            .projects-grid { grid-template-columns: 1fr; }
+            .projects { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <header>
+<header>
+    <div class="hero-inner">
         <div class="avatar">AM</div>
         <h1>Assi Maimon</h1>
-        <div class="subtitle">DevOps Engineer & Open Source Enthusiast</div>
-        
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/assi-maimon-00685122/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/maimon33" target="_blank">GitHub</a>
-            <a href="mailto:your-email@example.com">Contact</a>
-        </div>
-    </header>
+        <p class="subtitle">DevOps Engineer &amp; Open Source Builder</p>
+        <nav class="links">
+            <a href="https://github.com/maimon33" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/assi-maimon-00685122/" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="mailto:assi@maimons.dev">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+                Contact
+            </a>
+        </nav>
+    </div>
+</header>
 
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I am a passionate Software Engineer with a focus on building efficient, user-centric applications. 
-                My experience spans from native macOS development using Swift to modern cloud-native web solutions using React and AWS. 
-                I enjoy solving complex problems and contributing to the open-source community to build tools that enhance productivity and developer experience.
-            </p>
-        </section>
+<main>
 
-        <section id="projects">
-            <h2>Open Source Projects</h2>
-            <div class="projects-grid">
-                
-                <article class="project-card">
-                    <div class="project-title">
-                        Always Clock
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">Swift</span>
-                        <span class="tag">macOS</span>
-                        <span class="tag">Shell</span>
-                    </div>
-                    <p class="project-desc">
-                        A native macOS application designed for productivity. It provides a simple, elegant, always-on-top clock that stays visible over full-screen apps. Features include transparency control, click-through capability, and customizable digital/analog displays.
-                    </p>
-                    <div class="project-links">
-                        <a href="https://github.com/maimon33/always-clock" class="btn-outline" target="_blank">View Source</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-title">
-                        Trufo
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">AWS S3</span>
-                        <span class="tag">Google OAuth</span>
-                    </div>
-                    <p class="project-desc">
-                        A secure, static token-based object storage system. It features Google OAuth for authentication, complete user isolation, and runs entirely client-side using S3 and CloudFront. Includes TTL management for temporary objects and an admin dashboard.
-                    </p>
-                    <div class="project-links">
-                        <a href="https://github.com/maimon33/trufo" class="btn-outline" target="_blank">View Source</a>
-                    </div>
-                </article>
-
+    <!-- About -->
+    <section style="margin-bottom: 4rem;">
+        <div class="section-label">About</div>
+        <h2>Building tools that solve real problems</h2>
+        <div class="about-card">
+            <p>I'm a DevOps engineer who builds things end-to-end — from Terraform infrastructure to React frontends to native macOS apps. I care about simplicity, security, and developer experience. When something is missing from my toolbox, I build it.</p>
+            <div class="skills">
+                <span class="skill-badge">AWS</span>
+                <span class="skill-badge">Terraform</span>
+                <span class="skill-badge">Kubernetes</span>
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">TypeScript</span>
+                <span class="skill-badge">React</span>
+                <span class="skill-badge">Swift</span>
+                <span class="skill-badge">GitHub Actions</span>
+                <span class="skill-badge">Lambda</span>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Assi Maimon. Built for AWS S3.</p>
-    </footer>
+    <!-- Projects -->
+    <section>
+        <div class="section-label">Open Source</div>
+        <h2>Projects</h2>
+        <p class="section-intro">Two tools I built for real needs — one for secure file sharing, one to always know the time.</p>
+
+        <div class="projects">
+
+            <!-- Trufo -->
+            <article class="card">
+                <div class="card-banner trufo">
+                    <div class="trufo-visual">
+                        <div class="orbit orbit-1">
+                            <div class="orbit-dot" style="top: 0; left: 50%; transform: translate(-50%, -50%)"></div>
+                        </div>
+                        <div class="orbit orbit-2">
+                            <div class="orbit-dot" style="bottom: 8%; right: 8%;"></div>
+                        </div>
+                        <div class="lock-circle">
+                            <div class="lock-icon"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Trufo</div>
+                    <div class="tags">
+                        <span class="tag">AWS Lambda</span>
+                        <span class="tag">S3</span>
+                        <span class="tag purple">React</span>
+                        <span class="tag purple">TypeScript</span>
+                        <span class="tag green">Serverless</span>
+                    </div>
+                    <p class="card-desc">Serverless secure object storage — share files with time-limited tokens, email verification, and TOTP 2FA. No passwords stored, no servers to manage.</p>
+                    <ul class="feature-list">
+                        <li>Token-based sharing with configurable TTL</li>
+                        <li>Email magic-link + TOTP two-factor auth</li>
+                        <li>Full user isolation via S3 prefix policies</li>
+                        <li>Deployed with SAM or Terraform in minutes</li>
+                    </ul>
+                    <div class="card-actions">
+                        <a href="https://trufo.maimons.dev" class="btn btn-primary" target="_blank">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/maimon33/trufo" class="btn btn-ghost" target="_blank">View Source</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Always Clock -->
+            <article class="card">
+                <div class="card-banner clock">
+                    <div class="clock-visual">
+                        <div class="mac-window">
+                            <div class="mac-titlebar">
+                                <div class="dot dot-red"></div>
+                                <div class="dot dot-yellow"></div>
+                                <div class="dot dot-green"></div>
+                            </div>
+                            <div class="mac-body">
+                                <div class="clock-display" id="live-clock">--:--</div>
+                                <div class="clock-date" id="live-date">Loading...</div>
+                                <div class="always-on-badge">● Always on Top</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Always Clock</div>
+                    <div class="tags">
+                        <span class="tag slate">Swift</span>
+                        <span class="tag slate">macOS</span>
+                        <span class="tag orange">Homebrew</span>
+                    </div>
+                    <p class="card-desc">A native macOS clock that floats above every window — including full-screen apps. When you're deep in a presentation or game, time shouldn't hide.</p>
+                    <ul class="feature-list">
+                        <li>Always-on-top, even over full-screen apps</li>
+                        <li>Click-through mode — never in your way</li>
+                        <li>Adjustable opacity, size, and color</li>
+                        <li>One-line install via Homebrew</li>
+                    </ul>
+                    <div class="card-actions">
+                        <a href="https://github.com/maimon33/homebrew-tap" class="btn btn-primary" target="_blank">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Install
+                        </a>
+                        <a href="https://github.com/maimon33/always-clock" class="btn btn-ghost" target="_blank">View Source</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Assi Maimon &nbsp;·&nbsp; Hosted on AWS S3</p>
+</footer>
+
+<script>
+    function tick() {
+        const now = new Date();
+        document.getElementById('live-clock').textContent =
+            now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+        document.getElementById('live-date').textContent =
+            now.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }).toUpperCase();
+    }
+    tick();
+    setInterval(tick, 1000);
+</script>
 
 </body>
 </html>
