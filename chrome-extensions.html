@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Chrome Extensions | Maimon Consulting</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/jpeg" href="images/favicon.jpeg" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed": "#6ffbbe",
+                        "on-primary-fixed": "#001a42",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary": "#adc6ff",
+                        "on-background": "#e5e2e1",
+                        "on-primary": "#002e6a",
+                        "surface-tint": "#adc6ff",
+                        "inverse-on-surface": "#313030",
+                        "background": "#131313",
+                        "on-tertiary": "#502400",
+                        "on-secondary-fixed-variant": "#005236",
+                        "tertiary-container": "#df7412",
+                        "surface-variant": "#353534",
+                        "tertiary-fixed": "#ffdcc6",
+                        "surface-container-highest": "#353534",
+                        "secondary-container": "#00a572",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "on-surface-variant": "#c2c6d6",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-secondary-container": "#00311f",
+                        "primary-container": "#4d8eff",
+                        "error": "#ffb4ab",
+                        "outline": "#8c909f",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "surface-bright": "#393939",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary-container": "#461f00",
+                        "primary-fixed": "#d8e2ff",
+                        "secondary": "#4edea3",
+                        "surface-container": "#201f1f",
+                        "surface": "#131313",
+                        "tertiary": "#ffb786",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-primary-container": "#00285d",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary": "#003824",
+                        "inverse-primary": "#005ac2",
+                        "on-tertiary-fixed": "#311400",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-surface": "#e5e2e1",
+                        "outline-variant": "#424754",
+                        "surface-dim": "#131313",
+                        "on-secondary-fixed": "#002113"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-primary">
+
+    <!-- Top Navigation -->
+    <nav class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/10">
+        <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a class="font-label text-sm tracking-widest text-on-surface/50 hover:text-primary transition-colors"
+                    href="index.html">← maimons.dev</a>
+                <span class="text-on-surface/20">/</span>
+                <span class="text-primary material-symbols-outlined">extension</span>
+                <span class="font-headline font-bold text-xl tracking-tight text-on-surface uppercase">Chrome Extensions</span>
+            </div>
+            <a class="flex items-center gap-2 bg-gradient-to-br from-primary to-primary-container px-5 py-2 rounded-lg text-on-primary-fixed font-semibold text-sm transition-transform active:scale-95"
+                href="https://github.com/maimon33/chrome-extensions" target="_blank" rel="noopener noreferrer">
+                <span class="material-symbols-outlined text-sm">terminal</span>
+                VIEW ON GITHUB
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <section class="relative pt-20 pb-24 px-8 overflow-hidden">
+            <div class="bg-grid absolute inset-0 opacity-30 pointer-events-none"></div>
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="max-w-2xl">
+                    <span class="font-label text-xs tracking-[0.2em] text-primary uppercase mb-6 block flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm">extension</span>
+                        Browser Tooling // Manifest V3
+                    </span>
+                    <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9] text-on-surface mb-8">
+                        Browser extensions<br/>built for <span class="text-primary-container">real people.</span>
+                    </h1>
+                    <p class="text-lg text-on-surface-variant leading-relaxed max-w-xl">
+                        A collection of Chrome extensions with automated build and release pipelines. Each extension solves a specific friction point — no bloat, no tracking, just utility.
+                    </p>
+                </div>
+                <!-- Meta strip -->
+                <div class="mt-12 flex flex-wrap gap-6 font-label text-xs tracking-widest text-outline uppercase">
+                    <span class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm text-secondary">check_circle</span>
+                        Manifest V3
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm text-primary">settings_input_component</span>
+                        Automated CI / Release
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm text-tertiary">code</span>
+                        TypeScript
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extensions -->
+        <section class="bg-surface-container-low py-24 px-8">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="font-headline text-sm text-primary tracking-[0.3em] uppercase mb-16">Extensions</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                    <!-- Profile Guardian -->
+                    <div class="bg-surface-container-high rounded-xl border border-outline-variant/15 overflow-hidden flex flex-col">
+                        <div class="p-10 flex-1">
+                            <!-- Header -->
+                            <div class="flex items-start justify-between mb-8">
+                                <div class="p-3 bg-surface-container-highest rounded-lg">
+                                    <span class="material-symbols-outlined text-3xl text-secondary">shield_person</span>
+                                </div>
+                                <span class="px-3 py-1 bg-secondary/10 text-secondary text-[10px] rounded-full font-label uppercase tracking-widest">
+                                    v1.0.0
+                                </span>
+                            </div>
+                            <h3 class="font-headline text-3xl font-bold mb-4">Profile Guardian</h3>
+                            <p class="text-on-surface-variant leading-relaxed mb-8">
+                                Protects less technical users from the browser's most common annoyances. Profile Guardian silently blocks notification permission prompts and other intrusive browser requests before they ever appear — keeping the browsing experience clean and interruption-free.
+                            </p>
+                            <!-- Feature list -->
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-secondary text-base mt-0.5">notifications_off</span>
+                                    Blocks notification spam and permission request pop-ups
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-secondary text-base mt-0.5">summarize</span>
+                                    Provides a clear activity summary of what was blocked
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-secondary text-base mt-0.5">person_check</span>
+                                    Designed for novice users — zero configuration needed
+                                </li>
+                            </ul>
+                            <!-- Tags -->
+                            <div class="flex gap-2">
+                                <span class="text-[9px] bg-surface-container px-2 py-0.5 rounded text-outline uppercase border border-outline-variant/10">JS/TS</span>
+                                <span class="text-[9px] bg-surface-container px-2 py-0.5 rounded text-outline uppercase border border-outline-variant/10">Manifest V3</span>
+                            </div>
+                        </div>
+                        <!-- Footer CTA -->
+                        <div class="px-10 py-6 border-t border-outline-variant/10 flex items-center gap-6">
+                            <a href="https://github.com/maimon33/chrome-extensions/tree/main/profile-guardian"
+                                target="_blank" rel="noopener noreferrer"
+                                class="font-headline text-sm font-bold tracking-widest uppercase py-2 px-6 bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed rounded-lg transition-transform hover:scale-[1.02]">
+                                View Source
+                            </a>
+                            <a href="https://github.com/maimon33/chrome-extensions/releases" target="_blank" rel="noopener noreferrer"
+                                class="font-label text-sm tracking-widest text-outline hover:text-primary transition-colors flex items-center gap-1">
+                                Releases <span class="material-symbols-outlined text-xs">arrow_outward</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Trufo Extension -->
+                    <div class="bg-surface-container-high rounded-xl border border-outline-variant/15 overflow-hidden flex flex-col">
+                        <div class="p-10 flex-1">
+                            <!-- Header -->
+                            <div class="flex items-start justify-between mb-8">
+                                <div class="p-3 bg-surface-container-highest rounded-lg">
+                                    <span class="material-symbols-outlined text-3xl text-primary">lock</span>
+                                </div>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-[10px] rounded-full font-label uppercase tracking-widest">
+                                    v1.0.2
+                                </span>
+                            </div>
+                            <h3 class="font-headline text-3xl font-bold mb-4">Trufo</h3>
+                            <p class="text-on-surface-variant leading-relaxed mb-8">
+                                The Trufo Chrome extension brings encrypted secret sharing directly to your browser. Create one-time or time-limited secrets from any tab and share a secure link — without leaving your workflow.
+                            </p>
+                            <!-- Feature list -->
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-primary text-base mt-0.5">bolt</span>
+                                    Create and share encrypted secrets in one click
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-primary text-base mt-0.5">timer</span>
+                                    One-time use or TTL-based expiry, configurable per secret
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-primary text-base mt-0.5">link</span>
+                                    Connects to the Trufo SaaS backend or your self-hosted instance
+                                </li>
+                            </ul>
+                            <!-- Tags -->
+                            <div class="flex gap-2">
+                                <span class="text-[9px] bg-surface-container px-2 py-0.5 rounded text-outline uppercase border border-outline-variant/10">JS/TS</span>
+                                <span class="text-[9px] bg-surface-container px-2 py-0.5 rounded text-outline uppercase border border-outline-variant/10">Manifest V3</span>
+                                <span class="text-[9px] bg-surface-container px-2 py-0.5 rounded text-outline uppercase border border-outline-variant/10">Trufo API</span>
+                            </div>
+                        </div>
+                        <!-- Footer CTA -->
+                        <div class="px-10 py-6 border-t border-outline-variant/10 flex items-center gap-6">
+                            <a href="https://github.com/maimon33/chrome-extensions/tree/main/trufo"
+                                target="_blank" rel="noopener noreferrer"
+                                class="font-headline text-sm font-bold tracking-widest uppercase py-2 px-6 bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed rounded-lg transition-transform hover:scale-[1.02]">
+                                View Source
+                            </a>
+                            <a href="trufo.html"
+                                class="font-label text-sm tracking-widest text-outline hover:text-primary transition-colors flex items-center gap-1">
+                                Trufo project <span class="material-symbols-outlined text-xs">arrow_outward</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Install instructions -->
+        <section class="py-24 px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/10 overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <div class="p-12 lg:p-16 flex flex-col justify-center">
+                            <h3 class="font-headline text-3xl font-bold mb-6">Load unpacked</h3>
+                            <p class="text-on-surface-variant mb-8 leading-relaxed">
+                                While awaiting Chrome Web Store listing, extensions can be loaded directly from a release build.
+                            </p>
+                            <ol class="space-y-4">
+                                <li class="flex items-start gap-4">
+                                    <span class="w-6 h-6 rounded-full bg-surface-container-high border border-outline-variant/20 flex items-center justify-center text-xs font-bold font-headline text-primary flex-shrink-0 mt-0.5">1</span>
+                                    <span class="text-sm text-on-surface-variant">Download the latest release zip from <a href="https://github.com/maimon33/chrome-extensions/releases" target="_blank" class="text-primary hover:underline">GitHub Releases</a></span>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <span class="w-6 h-6 rounded-full bg-surface-container-high border border-outline-variant/20 flex items-center justify-center text-xs font-bold font-headline text-primary flex-shrink-0 mt-0.5">2</span>
+                                    <span class="text-sm text-on-surface-variant">Open <code class="text-primary bg-surface-container px-1 rounded">chrome://extensions</code> and enable Developer Mode</span>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <span class="w-6 h-6 rounded-full bg-surface-container-high border border-outline-variant/20 flex items-center justify-center text-xs font-bold font-headline text-primary flex-shrink-0 mt-0.5">3</span>
+                                    <span class="text-sm text-on-surface-variant">Click <strong>Load unpacked</strong> and select the extracted extension folder</span>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="bg-surface-container-high/40 p-12 lg:p-16 border-l border-outline-variant/10 font-mono text-xs">
+                            <div class="flex gap-2 mb-6">
+                                <div class="w-3 h-3 rounded-full bg-error/40"></div>
+                                <div class="w-3 h-3 rounded-full bg-tertiary/40"></div>
+                                <div class="w-3 h-3 rounded-full bg-secondary/40"></div>
+                            </div>
+                            <pre class="text-on-surface-variant leading-relaxed"><span class="text-primary"># Clone the repo</span>
+<span class="text-secondary-fixed">$</span> git clone https://github.com/maimon33/chrome-extensions
+
+<span class="text-primary"># Install deps & build</span>
+<span class="text-secondary-fixed">$</span> cd profile-guardian
+<span class="text-secondary-fixed">$</span> npm install && npm run build
+
+<span class="text-primary"># Load dist/ as unpacked extension</span>
+<span class="text-on-surface-variant/40">chrome://extensions → Load unpacked → dist/</span></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#131313] border-t border-[#E5E2E1]/15">
+        <div class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 max-w-7xl mx-auto gap-4">
+            <div class="flex items-center gap-2">
+                <span class="text-primary material-symbols-outlined text-sm">extension</span>
+                <div class="text-[#E5E2E1] font-bold font-['Space_Grotesk'] text-sm tracking-tight">
+                    Chrome Extensions
+                </div>
+            </div>
+            <div class="flex gap-8">
+                <a class="font-['Space_Grotesk'] text-sm tracking-tight text-[#E5E2E1]/60 hover:text-[#ADC6FF] transition-colors duration-300"
+                    href="https://github.com/maimon33/chrome-extensions" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="font-['Space_Grotesk'] text-sm tracking-tight text-[#E5E2E1]/60 hover:text-[#ADC6FF] transition-colors duration-300"
+                    href="index.html">← maimons.dev</a>
+            </div>
+            <div class="font-['Space_Grotesk'] text-sm tracking-tight text-[#E5E2E1]/60">
+                © 2026 Assi Maimon · Browser Tooling
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
