@@ -291,27 +291,39 @@
                         </div>
                     </div>
                 </div>
-                <div class="md:col-span-4 flex flex-col gap-6">
+                <div class="md:col-span-4">
                     <!-- Trufo Secondary Card -->
-                    <div class="group bg-surface-container-high rounded-xl p-8 flex-1 border border-outline-variant/15 relative overflow-hidden">
+                    <div class="group bg-surface-container-high rounded-xl p-8 h-[420px] border border-outline-variant/15 relative overflow-hidden flex flex-col justify-between">
+                        <div class="absolute top-8 right-8">
+                            <span class="px-3 py-1 bg-primary/10 text-primary text-[10px] rounded-full font-label uppercase tracking-widest flex items-center gap-2 backdrop-blur-md">
+                                <span class="w-2 h-2 rounded-full bg-primary commit-pulse"></span> Active Project
+                            </span>
+                        </div>
                         <div class="absolute -top-4 -right-4 opacity-10 pointer-events-none">
                             <span class="material-symbols-outlined text-8xl">shield_with_heart</span>
                         </div>
                         <div class="relative z-10">
                             <span class="material-symbols-outlined text-primary text-4xl mb-6 block">shield_with_heart</span>
-                            <h4 class="font-headline text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Trufo</h4>
-                            <p class="text-sm text-on-surface-variant leading-relaxed mb-6">
-                                Secure secrets sharing with one-time access, TTL, browser tooling, and a clean serverless AWS footprint.
+                            <h4 class="font-headline text-3xl font-bold mb-4 group-hover:text-primary transition-colors">Trufo</h4>
+                            <p class="text-base text-on-surface-variant leading-relaxed mb-6">
+                                Secure secrets sharing with one-time access, TTL, browser tooling, and a polished serverless AWS footprint for teams that need fast, auditable delivery of sensitive data.
                             </p>
                             <div class="flex gap-2 mb-8">
                                 <span class="text-[9px] bg-surface-container-lowest px-2 py-0.5 rounded text-outline uppercase border border-outline-variant/10">Lambda</span>
                                 <span class="text-[9px] bg-surface-container-lowest px-2 py-0.5 rounded text-outline uppercase border border-outline-variant/10">S3</span>
                                 <span class="text-[9px] bg-surface-container-lowest px-2 py-0.5 rounded text-outline uppercase border border-outline-variant/10">Security</span>
+                                <span class="text-[9px] bg-surface-container-lowest px-2 py-0.5 rounded text-outline uppercase border border-outline-variant/10">SaaS</span>
                             </div>
+                        </div>
+                        <div class="relative z-10">
                             <div class="flex items-center gap-4">
                                 <a href="trufo.html"
-                                    class="font-headline text-sm font-bold tracking-widest uppercase py-2 px-6 bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed rounded-lg transition-transform hover:scale-[1.02]">
+                                    class="font-headline text-sm font-bold tracking-widest uppercase py-3 px-8 bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed rounded-lg transition-transform hover:scale-[1.02]">
                                     Read More
+                                </a>
+                                <a href="https://trufo.maimons.dev" target="_blank" rel="noopener noreferrer"
+                                    class="font-label text-sm tracking-widest text-outline hover:text-primary transition-colors flex items-center gap-1">
+                                    Live App <span class="material-symbols-outlined text-xs">arrow_outward</span>
                                 </a>
                                 <a href="https://github.com/maimon33/trufo" target="_blank" rel="noopener noreferrer"
                                     class="font-label text-sm tracking-widest text-outline hover:text-primary transition-colors flex items-center gap-1">
@@ -320,16 +332,24 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Architecture philosophy card -->
-                    <div class="bg-surface-container-high rounded-xl p-8 flex-1 flex flex-col justify-center border border-outline-variant/15 relative overflow-hidden">
-                        <div class="absolute -bottom-6 -right-6 opacity-5 rotate-12 pointer-events-none">
-                            <span class="material-symbols-outlined text-9xl">architecture</span>
-                        </div>
-                        <span class="material-symbols-outlined text-tertiary text-4xl mb-6">architecture</span>
-                        <h4 class="font-headline text-xl font-bold mb-4">Architecture First</h4>
+                </div>
+                <!-- Architecture philosophy card -->
+                <div class="md:col-span-12 bg-surface-container-high rounded-xl p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-8 border border-outline-variant/15 relative overflow-hidden">
+                    <div class="absolute -bottom-6 -right-6 opacity-5 rotate-12 pointer-events-none">
+                        <span class="material-symbols-outlined text-9xl">architecture</span>
+                    </div>
+                    <div class="relative z-10 max-w-3xl">
+                        <span class="material-symbols-outlined text-tertiary text-4xl mb-6 block">architecture</span>
+                        <h4 class="font-headline text-2xl font-bold mb-4">Architecture First</h4>
                         <p class="text-sm text-on-surface-variant leading-relaxed">
                             My approach prioritizes system decoupling and observability. Infrastructure is not a support role — it's the framework upon which product quality resides.
                         </p>
+                    </div>
+                    <div class="relative z-10 flex flex-wrap gap-3">
+                        <span class="text-[10px] font-label text-primary-container uppercase tracking-widest border border-primary-container/20 px-3 py-1 rounded bg-primary-container/5">Serverless</span>
+                        <span class="text-[10px] font-label text-primary-container uppercase tracking-widest border border-primary-container/20 px-3 py-1 rounded bg-primary-container/5">Automation</span>
+                        <span class="text-[10px] font-label text-primary-container uppercase tracking-widest border border-primary-container/20 px-3 py-1 rounded bg-primary-container/5">Observability</span>
+                        <span class="text-[10px] font-label text-primary-container uppercase tracking-widest border border-primary-container/20 px-3 py-1 rounded bg-primary-container/5">Security</span>
                     </div>
                 </div>
             </div>
