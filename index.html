@@ -256,7 +256,7 @@
                 </span>
             </div>
             <div class="grid md:grid-cols-12 gap-6">
-                <!-- Trufo Feature Card -->
+                <!-- Uptime Feature Card -->
                 <div class="md:col-span-8 group relative overflow-hidden bg-surface-container-lowest rounded-xl border border-outline-variant/15 p-10 h-[420px] flex flex-col justify-end">
                     <div class="absolute top-8 right-8">
                         <span class="px-3 py-1 bg-secondary/10 text-secondary text-[10px] rounded-full font-label uppercase tracking-widest flex items-center gap-2 backdrop-blur-md">
@@ -266,40 +266,71 @@
                     <!-- Subtle bg grid -->
                     <div class="bg-grid absolute inset-0 opacity-30 group-hover:opacity-50 transition-opacity duration-700"></div>
                     <div class="relative z-10">
-                        <div class="p-3 bg-surface-container-high rounded-lg text-primary w-fit mb-6">
-                            <span class="material-symbols-outlined text-3xl">terminal</span>
+                        <div class="p-3 bg-surface-container-high rounded-lg text-secondary w-fit mb-6">
+                            <span class="material-symbols-outlined text-3xl">monitoring</span>
                         </div>
-                        <h3 class="font-headline text-5xl font-bold mb-4 group-hover:text-primary transition-colors">Trufo</h3>
+                        <h3 class="font-headline text-5xl font-bold mb-4 group-hover:text-primary transition-colors">Uptime</h3>
                         <p class="text-on-surface-variant text-lg leading-relaxed max-w-lg mb-6">
-                            A platform to easily share secrets (one-time, with TTL) in a secure and auditable way.
+                            Self-hosted AWS uptime monitoring with a public status page, private admin UI, and regional Lambda workers running in your own account.
                         </p>
                         <div class="flex gap-3 mb-8">
                             <span class="text-[10px] font-label text-primary-container uppercase tracking-widest border border-primary-container/20 px-3 py-1 rounded bg-primary-container/5">Python</span>
-                            <span class="text-[10px] font-label text-primary-container uppercase tracking-widest border border-primary-container/20 px-3 py-1 rounded bg-primary-container/5">Lambda</span>
-                            <span class="text-[10px] font-label text-primary-container uppercase tracking-widest border border-primary-container/20 px-3 py-1 rounded bg-primary-container/5">S3</span>
+                            <span class="text-[10px] font-label text-primary-container uppercase tracking-widest border border-primary-container/20 px-3 py-1 rounded bg-primary-container/5">AWS Lambda</span>
+                            <span class="text-[10px] font-label text-primary-container uppercase tracking-widest border border-primary-container/20 px-3 py-1 rounded bg-primary-container/5">DynamoDB</span>
+                            <span class="text-[10px] font-label text-primary-container uppercase tracking-widest border border-primary-container/20 px-3 py-1 rounded bg-primary-container/5">Multi-Region</span>
                         </div>
                         <div class="flex items-center gap-6">
-                            <a href="trufo.html"
+                            <a href="uptime.html"
                                 class="font-headline text-sm font-bold tracking-widest uppercase py-3 px-8 bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed rounded-lg transition-transform hover:scale-[1.02]">
                                 Read More
                             </a>
-                            <a href="https://github.com/maimon33/trufo" target="_blank" rel="noopener noreferrer"
+                            <a href="https://github.com/maimon33/uptime" target="_blank" rel="noopener noreferrer"
                                 class="font-label text-sm tracking-widest text-outline hover:text-primary transition-colors flex items-center gap-1">
                                 GitHub <span class="material-symbols-outlined text-xs">arrow_outward</span>
                             </a>
                         </div>
                     </div>
                 </div>
-                <!-- Architecture philosophy card -->
-                <div class="md:col-span-4 bg-surface-container-high rounded-xl p-8 flex flex-col justify-center border border-outline-variant/15 relative overflow-hidden">
-                    <div class="absolute -bottom-6 -right-6 opacity-5 rotate-12 pointer-events-none">
-                        <span class="material-symbols-outlined text-9xl">architecture</span>
+                <div class="md:col-span-4 flex flex-col gap-6">
+                    <!-- Trufo Secondary Card -->
+                    <div class="group bg-surface-container-high rounded-xl p-8 flex-1 border border-outline-variant/15 relative overflow-hidden">
+                        <div class="absolute -top-4 -right-4 opacity-10 pointer-events-none">
+                            <span class="material-symbols-outlined text-8xl">shield_with_heart</span>
+                        </div>
+                        <div class="relative z-10">
+                            <span class="material-symbols-outlined text-primary text-4xl mb-6 block">shield_with_heart</span>
+                            <h4 class="font-headline text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Trufo</h4>
+                            <p class="text-sm text-on-surface-variant leading-relaxed mb-6">
+                                Secure secrets sharing with one-time access, TTL, browser tooling, and a clean serverless AWS footprint.
+                            </p>
+                            <div class="flex gap-2 mb-8">
+                                <span class="text-[9px] bg-surface-container-lowest px-2 py-0.5 rounded text-outline uppercase border border-outline-variant/10">Lambda</span>
+                                <span class="text-[9px] bg-surface-container-lowest px-2 py-0.5 rounded text-outline uppercase border border-outline-variant/10">S3</span>
+                                <span class="text-[9px] bg-surface-container-lowest px-2 py-0.5 rounded text-outline uppercase border border-outline-variant/10">Security</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <a href="trufo.html"
+                                    class="font-headline text-sm font-bold tracking-widest uppercase py-2 px-6 bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed rounded-lg transition-transform hover:scale-[1.02]">
+                                    Read More
+                                </a>
+                                <a href="https://github.com/maimon33/trufo" target="_blank" rel="noopener noreferrer"
+                                    class="font-label text-sm tracking-widest text-outline hover:text-primary transition-colors flex items-center gap-1">
+                                    GitHub <span class="material-symbols-outlined text-xs">arrow_outward</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <span class="material-symbols-outlined text-tertiary text-4xl mb-6">architecture</span>
-                    <h4 class="font-headline text-xl font-bold mb-4">Architecture First</h4>
-                    <p class="text-sm text-on-surface-variant leading-relaxed">
-                        My approach prioritizes system decoupling and observability. Infrastructure is not a support role — it's the framework upon which product quality resides.
-                    </p>
+                    <!-- Architecture philosophy card -->
+                    <div class="bg-surface-container-high rounded-xl p-8 flex-1 flex flex-col justify-center border border-outline-variant/15 relative overflow-hidden">
+                        <div class="absolute -bottom-6 -right-6 opacity-5 rotate-12 pointer-events-none">
+                            <span class="material-symbols-outlined text-9xl">architecture</span>
+                        </div>
+                        <span class="material-symbols-outlined text-tertiary text-4xl mb-6">architecture</span>
+                        <h4 class="font-headline text-xl font-bold mb-4">Architecture First</h4>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            My approach prioritizes system decoupling and observability. Infrastructure is not a support role — it's the framework upon which product quality resides.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
