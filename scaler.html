@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scaler | Kubernetes Scaling Control Plane</title>
+    <meta name="description" content="Scaler is an interactive Kubernetes scaling control-plane mock for fast replica changes, schedules, suggestions, timing, and timeout accounting." />
+    <link rel="icon" type="image/jpeg" href="images/favicon.jpeg" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = { darkMode: "class", theme: { extend: {
+            colors: { background: "#101512", surface: "#101512", "surface-container-lowest": "#090d0b", "surface-container-low": "#171e1a", "surface-container": "#1d2822", "surface-container-high": "#26352d", "surface-bright": "#33483c", primary: "#b9f7d1", "primary-container": "#3f8b65", "primary-fixed": "#d5ffe4", "on-primary-fixed": "#062016", secondary: "#71e7a4", "secondary-fixed": "#9fffc4", tertiary: "#f1c968", "tertiary-fixed": "#ffe5a2", "on-surface": "#eef2ed", "on-surface-variant": "#c1cac3", outline: "#89958d", "outline-variant": "#3c4941" },
+            fontFamily: { headline: ["Space Grotesk"], body: ["Manrope"], label: ["Space Grotesk"] }, borderRadius: { lg: "0.5rem", xl: "0.75rem" }
+        } } }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 24; }
+        .scale-grid { background-image: linear-gradient(rgba(185,247,209,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(185,247,209,.04) 1px, transparent 1px); background-size: 32px 32px; }
+        a:focus-visible { outline: 2px solid #b9f7d1; outline-offset: 4px; border-radius: .25rem; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased selection:bg-primary/30">
+    <nav class="sticky top-0 z-50 bg-background/85 backdrop-blur-xl border-b border-outline-variant/20" aria-label="Project navigation">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3 min-w-0"><a class="font-label text-xs sm:text-sm tracking-widest text-outline hover:text-primary transition-colors" href="index.html">← maimons.dev</a><span class="text-outline-variant">/</span><span class="font-headline font-bold text-base sm:text-xl truncate">Scaler</span></div>
+            <a class="hidden sm:flex items-center gap-2 bg-primary px-5 py-2 rounded-lg text-on-primary-fixed font-semibold text-sm" href="https://github.com/maimon33/scaler" target="_blank" rel="noopener noreferrer">View on GitHub <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+        </div>
+    </nav>
+    <main>
+        <section class="relative overflow-hidden px-5 sm:px-8 py-20 sm:py-28">
+            <div class="absolute inset-0 scale-grid opacity-70 pointer-events-none"></div>
+            <div class="absolute w-[34rem] h-[34rem] rounded-full bg-secondary/10 blur-[120px] -right-40 -top-40 pointer-events-none"></div>
+            <div class="relative max-w-7xl mx-auto grid lg:grid-cols-12 gap-14 items-center">
+                <div class="lg:col-span-7">
+                    <div class="inline-flex items-center gap-3 px-3 py-1 rounded-full bg-surface-container border border-outline-variant/30 mb-8"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-label text-[10px] tracking-[0.2em] text-secondary-fixed uppercase">Fast Kubernetes scaling · interactive mock</span></div>
+                    <h1 class="font-headline text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tighter leading-[0.92] mb-8">Scale workloads with <span class="text-primary">operational context intact.</span></h1>
+                    <p class="max-w-2xl text-lg text-on-surface-variant leading-relaxed mb-8">Scaler explores a focused control plane for manual replica changes, second-granularity reconciliation, schedules, suggestions, operation timing, and timeout budgets across Kubernetes workloads.</p>
+                    <div class="flex flex-wrap gap-4 mb-8"><a class="px-7 py-3 rounded-lg bg-primary text-on-primary-fixed font-bold" href="https://github.com/maimon33/scaler#readme" target="_blank" rel="noopener noreferrer">Run the mock</a><a class="px-7 py-3 rounded-lg bg-surface-container-high border border-outline-variant/30 text-primary font-bold" href="https://github.com/maimon33/scaler" target="_blank" rel="noopener noreferrer">Source code</a></div>
+                    <div class="flex flex-wrap gap-2 font-label text-[10px] uppercase tracking-widest"><span class="px-3 py-1 rounded-full border border-primary/30 text-primary-fixed">React 19</span><span class="px-3 py-1 rounded-full border border-secondary/30 text-secondary-fixed">Kubernetes</span><span class="px-3 py-1 rounded-full border border-tertiary/30 text-tertiary-fixed">EKS / IRSA</span></div>
+                </div>
+                <div class="lg:col-span-5 bg-surface-container-low rounded-xl border border-primary/20 p-5 shadow-2xl">
+                    <div class="flex items-center justify-between mb-5"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">bolt</span><span class="font-headline font-bold">Scaling overview</span></div><span class="font-label text-[10px] uppercase tracking-widest text-outline">eks-prod-01</span></div>
+                    <div class="grid grid-cols-2 gap-3 mb-3">
+                        <div class="rounded-lg bg-surface-container-lowest p-4"><p class="text-[10px] uppercase tracking-wider text-outline mb-2">Active replicas</p><p class="font-headline text-3xl font-bold">38</p><p class="text-xs text-tertiary mt-1">6 pending</p></div>
+                        <div class="rounded-lg bg-surface-container-lowest p-4"><p class="text-[10px] uppercase tracking-wider text-outline mb-2">Median scale</p><p class="font-headline text-3xl font-bold text-secondary">1.9s</p><p class="text-xs text-outline mt-1">↓ 0.4s</p></div>
+                    </div>
+                    <div class="rounded-lg bg-surface-container-lowest divide-y divide-outline-variant/20">
+                        <div class="p-4 flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-secondary"></span><div><p class="text-sm font-semibold">checkout-api</p><p class="text-[10px] text-outline">CPU · 61%</p></div><span class="ml-auto font-label text-xs">12 / 12</span></div>
+                        <div class="p-4 flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-tertiary"></span><div><p class="text-sm font-semibold">events-worker</p><p class="text-[10px] text-outline">SQS · 8.2k</p></div><span class="ml-auto font-label text-xs text-tertiary">18 → 24</span></div>
+                        <div class="p-4 flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-outline"></span><div><p class="text-sm font-semibold">pdf-renderer</p><p class="text-[10px] text-outline">Schedule</p></div><span class="ml-auto font-label text-xs text-outline">Paused</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-surface-container-low py-20 sm:py-28 px-5 sm:px-8">
+            <div class="max-w-7xl mx-auto"><div class="max-w-2xl mb-14"><p class="font-label text-xs text-primary uppercase tracking-[0.25em] mb-4">Control-plane model</p><h2 class="font-headline text-4xl sm:text-5xl font-bold tracking-tight">A faster scaling workflow, end to end.</h2></div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <article class="bg-surface-container rounded-xl p-8 border border-outline-variant/20"><span class="material-symbols-outlined text-4xl text-primary mb-5">tune</span><h3 class="font-headline text-xl font-bold mb-3">Manual scaling</h3><p class="text-on-surface-variant leading-relaxed">Search workloads, inspect current and desired replicas, and submit a focused replica change from one dialog.</p></article>
+                    <article class="bg-surface-container rounded-xl p-8 border border-outline-variant/20"><span class="material-symbols-outlined text-4xl text-secondary mb-5">sync</span><h3 class="font-headline text-xl font-bold mb-3">One-second reconciliation</h3><p class="text-on-surface-variant leading-relaxed">The interface models desired-state reconciliation every second and makes scaling state visible per workload.</p></article>
+                    <article class="bg-surface-container rounded-xl p-8 border border-outline-variant/20"><span class="material-symbols-outlined text-4xl text-tertiary mb-5">schedule</span><h3 class="font-headline text-xl font-bold mb-3">Schedules and signals</h3><p class="text-on-surface-variant leading-relaxed">Bring CPU, request rate, SQS depth, schedules, and recommendations into the same operational view.</p></article>
+                    <article class="bg-surface-container rounded-xl p-8 border border-outline-variant/20"><span class="material-symbols-outlined text-4xl text-secondary mb-5">speed</span><h3 class="font-headline text-xl font-bold mb-3">Timing visibility</h3><p class="text-on-surface-variant leading-relaxed">Track last-operation latency, median scale time, success rate, and consumed timeout budget.</p></article>
+                    <article class="bg-surface-container rounded-xl p-8 border border-outline-variant/20"><span class="material-symbols-outlined text-4xl text-primary mb-5">shield_lock</span><h3 class="font-headline text-xl font-bold mb-3">Local proxy boundary</h3><p class="text-on-surface-variant leading-relaxed">The documented access path uses local kube-proxy and explicitly warns against publishing it through ingress.</p></article>
+                    <article class="bg-surface-container rounded-xl p-8 border border-outline-variant/20"><span class="material-symbols-outlined text-4xl text-tertiary mb-5">key</span><h3 class="font-headline text-xl font-bold mb-3">Credential choices</h3><p class="text-on-surface-variant leading-relaxed">Supports node credentials, recommended least-privilege OIDC/IRSA, and static keys only for local development.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 sm:py-28 px-5 sm:px-8"><div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8">
+            <div class="rounded-xl bg-surface-container-lowest border border-outline-variant/20 p-8 sm:p-10"><p class="font-label text-xs uppercase tracking-[0.2em] text-secondary mb-5">Run locally</p><h2 class="font-headline text-3xl font-bold mb-6">A realistic interactive prototype.</h2><p class="text-on-surface-variant leading-relaxed mb-8">Docker Compose starts the interface at localhost. Its controls are interactive and use representative workload data, but the current project deliberately does not modify a real cluster.</p><div class="rounded-lg bg-surface-container p-5 font-mono text-sm text-on-surface-variant"><p><span class="text-secondary">$</span> docker compose up --build</p><p class="mt-2 text-outline">open http://localhost:3000</p></div></div>
+            <div class="rounded-xl bg-surface-container border border-outline-variant/20 p-8 sm:p-10"><p class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-5">Security posture</p><h2 class="font-headline text-3xl font-bold mb-6">Least privilege before automation.</h2><p class="text-on-surface-variant leading-relaxed mb-6">The design recommends IRSA for EKS, an IAM role limited to configured trigger sources, and Kubernetes RBAC constrained to the intended namespaces and workload kinds.</p><p class="text-sm text-outline leading-relaxed">Static AWS credentials belong only in local runtime secrets—never in the image or repository.</p></div>
+        </div></section>
+    </main>
+    <footer class="border-t border-outline-variant/20"><div class="max-w-7xl mx-auto px-5 sm:px-8 py-10 flex flex-col sm:flex-row gap-5 justify-between text-sm"><span class="font-headline font-bold">© 2026 Assi Maimon</span><div class="flex gap-7 text-outline"><a class="hover:text-primary" href="index.html">Home</a><a class="hover:text-primary" href="https://github.com/maimon33/scaler" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></footer>
+</body>
+</html>
