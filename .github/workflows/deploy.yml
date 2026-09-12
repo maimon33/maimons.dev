@@ -26,11 +26,12 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::236565801201:role/github-maimons-dev
-          aws-region: us-east-1
+          aws-region: eu-west-1
 
       - name: Sync to S3
         run: |
           aws s3 sync . s3://www.maimons.dev \
             --exclude ".git/*" \
             --exclude ".github/*" \
+            --exclude "scaler/*" \
             --delete
