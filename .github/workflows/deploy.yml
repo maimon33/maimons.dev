@@ -29,6 +29,11 @@ jobs:
           aws-region: eu-west-1
 
       - name: Sync to S3
+        # scaler/* is excluded from --delete because it's owned by a separate
+        # pipeline (maimon33/scaler's deploy-scaler-app-demo.yml), which syncs
+        # only that prefix. This repo has no local scaler/ directory (the
+        # Scaler project page here is the flat scaler.html), so without this
+        # exclude, --delete would wipe out that prefix on every deploy here.
         run: |
           aws s3 sync . s3://www.maimons.dev \
             --exclude ".git/*" \

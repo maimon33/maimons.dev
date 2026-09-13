@@ -40,18 +40,13 @@
                     <div class="flex flex-wrap gap-4 mb-8"><a class="px-7 py-3 rounded-lg bg-primary text-on-primary-fixed font-bold" href="/scaler/">Run the mock</a><a class="px-7 py-3 rounded-lg bg-surface-container-high border border-outline-variant/30 text-primary font-bold" href="https://github.com/maimon33/scaler" target="_blank" rel="noopener noreferrer">Source code</a></div>
                     <div class="flex flex-wrap gap-2 font-label text-[10px] uppercase tracking-widest"><span class="px-3 py-1 rounded-full border border-primary/30 text-primary-fixed">React 19</span><span class="px-3 py-1 rounded-full border border-secondary/30 text-secondary-fixed">Kubernetes</span><span class="px-3 py-1 rounded-full border border-tertiary/30 text-tertiary-fixed">EKS / IRSA</span></div>
                 </div>
-                <div class="lg:col-span-5 bg-surface-container-low rounded-xl border border-primary/20 p-5 shadow-2xl">
-                    <div class="flex items-center justify-between mb-5"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">bolt</span><span class="font-headline font-bold">Scaling overview</span></div><span class="font-label text-[10px] uppercase tracking-widest text-outline">eks-prod-01</span></div>
-                    <div class="grid grid-cols-2 gap-3 mb-3">
-                        <div class="rounded-lg bg-surface-container-lowest p-4"><p class="text-[10px] uppercase tracking-wider text-outline mb-2">Active replicas</p><p class="font-headline text-3xl font-bold">38</p><p class="text-xs text-tertiary mt-1">6 pending</p></div>
-                        <div class="rounded-lg bg-surface-container-lowest p-4"><p class="text-[10px] uppercase tracking-wider text-outline mb-2">Median scale</p><p class="font-headline text-3xl font-bold text-secondary">1.9s</p><p class="text-xs text-outline mt-1">↓ 0.4s</p></div>
-                    </div>
-                    <div class="rounded-lg bg-surface-container-lowest divide-y divide-outline-variant/20">
-                        <div class="p-4 flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-secondary"></span><div><p class="text-sm font-semibold">checkout-api</p><p class="text-[10px] text-outline">CPU · 61%</p></div><span class="ml-auto font-label text-xs">12 / 12</span></div>
-                        <div class="p-4 flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-tertiary"></span><div><p class="text-sm font-semibold">events-worker</p><p class="text-[10px] text-outline">SQS · 8.2k</p></div><span class="ml-auto font-label text-xs text-tertiary">18 → 24</span></div>
-                        <div class="p-4 flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-outline"></span><div><p class="text-sm font-semibold">pdf-renderer</p><p class="text-[10px] text-outline">Schedule</p></div><span class="ml-auto font-label text-xs text-outline">Paused</span></div>
-                    </div>
-                </div>
+                <a href="https://www.maimons.dev/scaler/" target="_blank" rel="noopener noreferrer" class="lg:col-span-5 group relative block rounded-xl overflow-hidden border border-primary/20 shadow-2xl">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 blur-3xl opacity-30 group-hover:opacity-50 transition-opacity" aria-hidden="true"></div>
+                    <img alt="Scaler dashboard — live interactive demo"
+                        class="relative w-full h-auto object-cover object-top rounded-xl opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                        src="images/scaler-thumbnail.png" />
+                    <span class="absolute bottom-4 right-4 px-3 py-1.5 bg-surface-container-lowest/90 backdrop-blur-md rounded-lg font-label text-[10px] uppercase tracking-widest text-primary flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">Open live demo <span class="material-symbols-outlined text-xs">arrow_outward</span></span>
+                </a>
             </div>
         </section>
 
