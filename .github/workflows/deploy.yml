@@ -10,6 +10,9 @@ on:
       - "**/*.css"
       - "**/*.js"
       - "assets/**"
+      - "images/**"
+      - "src/**"
+      - "tailwind.config.js"
 
 permissions:
   id-token: write
@@ -21,6 +24,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Build CSS
+        run: npx -y tailwindcss@3.4.17 -i src/input.css -o styles.css --minify
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -34,4 +40,9 @@ jobs:
             --exclude ".git/*" \
             --exclude ".github/*" \
             --exclude "scaler/*" \
+            --exclude "src/*" \
+            --exclude "*.md" \
+            --exclude "tailwind.config.js" \
+            --exclude ".gitignore" \
+            --exclude "*.DS_Store" \
             --delete

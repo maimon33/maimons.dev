@@ -5,22 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DMARCer | Local-First Email Authentication Analysis</title>
     <meta name="description" content="DMARCer is a local-first dashboard for DMARC aggregate reports, live SPF and DMARC posture, and optional read-only Gmail imports." />
-    <link rel="icon" type="image/jpeg" href="images/favicon.jpeg" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
-    <script>
-        tailwind.config = { darkMode: "class", theme: { extend: {
-            colors: { background: "#131313", surface: "#131313", "surface-container-lowest": "#0e0e0e", "surface-container-low": "#1c1b1b", "surface-container": "#201f1f", "surface-container-high": "#2a2a2a", "surface-bright": "#393939", primary: "#adc6ff", "primary-container": "#4d8eff", "primary-fixed": "#d8e2ff", "on-primary-fixed": "#001a42", secondary: "#4edea3", "secondary-fixed": "#6ffbbe", tertiary: "#ffb786", "tertiary-fixed": "#ffdcc6", "on-surface": "#e5e2e1", "on-surface-variant": "#c2c6d6", outline: "#8c909f", "outline-variant": "#424754" },
-            fontFamily: { headline: ["Space Grotesk"], body: ["Manrope"], label: ["Space Grotesk"] },
-            borderRadius: { lg: "0.5rem", xl: "0.75rem" }
-        } } }
-    </script>
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#131313" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="maimons.dev" />
+    <meta property="og:title" content="DMARCer | Local-First Email Authentication Analysis" />
+    <meta property="og:description" content="DMARCer is a local-first dashboard for DMARC aggregate reports, live SPF and DMARC posture, and optional read-only Gmail imports." />
+    <meta property="og:url" content="https://www.maimons.dev/dmarcer.html" />
+    <meta property="og:image" content="https://www.maimons.dev/images/3d-logo.jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;icon_names=arrow_outward,database,dns,encrypted,ios_share,mail_lock,upload_file,warning&amp;display=block" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
     <style>
+        :root { --c-background: 19 19 19; --c-surface: 19 19 19; --c-surface-container-lowest: 14 14 14; --c-surface-container-low: 28 27 27; --c-surface-container: 32 31 31; --c-surface-container-high: 42 42 42; --c-surface-bright: 57 57 57; --c-primary: 173 198 255; --c-primary-container: 77 142 255; --c-primary-fixed: 216 226 255; --c-on-primary-fixed: 0 26 66; --c-secondary: 78 222 163; --c-secondary-fixed: 111 251 190; --c-tertiary: 255 183 134; --c-tertiary-fixed: 255 220 198; --c-on-surface: 229 226 225; --c-on-surface-variant: 194 198 214; --c-outline: 140 144 159; --c-outline-variant: 66 71 84; --r: 0.25rem; --r-lg: 0.5rem; --r-xl: 0.75rem; --r-full: 9999px; }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 24; }
         .report-grid { background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 28px 28px; }
         a:focus-visible { outline: 2px solid #adc6ff; outline-offset: 4px; border-radius: .25rem; }
     </style>
+    <script type="speculationrules">
+        {"prerender": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
+    </script>
 </head>
 <body class="bg-background text-on-surface font-body antialiased selection:bg-primary/30">
     <nav class="sticky top-0 z-50 bg-background/85 backdrop-blur-xl border-b border-outline-variant/10" aria-label="Project navigation">
@@ -28,9 +35,9 @@
             <div class="flex items-center gap-3 min-w-0">
                 <a class="font-label text-xs sm:text-sm tracking-widest text-outline hover:text-primary transition-colors" href="index.html">← maimons.dev</a>
                 <span class="text-outline-variant">/</span>
-                <span class="font-headline font-bold text-base sm:text-xl truncate">DMARCer</span>
+                <span aria-current="page" class="font-headline font-bold text-base sm:text-xl truncate">DMARCer</span>
             </div>
-            <a class="hidden sm:flex items-center gap-2 bg-gradient-to-br from-primary to-primary-container px-5 py-2 rounded-lg text-on-primary-fixed font-semibold text-sm" href="https://github.com/maimon33/dmarcer" target="_blank" rel="noopener noreferrer">View on GitHub <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+            <a class="hidden sm:flex items-center gap-2 bg-gradient-to-br from-primary to-primary-container px-5 py-2 rounded-lg text-on-primary-fixed font-semibold text-sm" href="https://github.com/maimon33/dmarcer" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true" class="material-symbols-outlined text-sm">arrow_outward</span></a>
         </div>
     </nav>
     <main>
@@ -40,7 +47,7 @@
                 <div class="lg:col-span-7">
                     <div class="inline-flex items-center gap-3 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/20 mb-8">
                         <span class="w-2 h-2 rounded-full bg-tertiary"></span>
-                        <span class="font-label text-[10px] tracking-[0.2em] text-tertiary-fixed uppercase">Local data · live DNS posture</span>
+                        <span class="font-label text-[11px] tracking-[0.2em] text-tertiary-fixed uppercase">Local data · live DNS posture</span>
                     </div>
                     <h1 class="font-headline text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tighter leading-[0.92] mb-8">See who sends mail for your domain—and <span class="text-primary">whether it authenticates.</span></h1>
                     <p class="max-w-2xl text-lg text-on-surface-variant leading-relaxed mb-8">DMARCer turns aggregate XML reports into a practical private dashboard. Upload reports directly, inspect live DMARC and SPF records, or import matching attachments from Gmail without sending your data to a hosted service.</p>
@@ -48,7 +55,7 @@
                         <a class="px-7 py-3 rounded-lg bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed font-bold" href="https://github.com/maimon33/dmarcer#readme" target="_blank" rel="noopener noreferrer">Run DMARCer</a>
                         <a class="px-7 py-3 rounded-lg bg-surface-container-high border border-outline-variant/20 text-primary font-bold" href="https://github.com/maimon33/dmarcer" target="_blank" rel="noopener noreferrer">Source code</a>
                     </div>
-                    <div class="flex flex-wrap gap-2 font-label text-[10px] uppercase tracking-widest">
+                    <div class="flex flex-wrap gap-2 font-label text-[11px] uppercase tracking-widest">
                         <span class="px-3 py-1 rounded-full border border-primary/20 text-primary-fixed">Node.js 22+</span>
                         <span class="px-3 py-1 rounded-full border border-secondary/20 text-secondary-fixed">Docker</span>
                         <span class="px-3 py-1 rounded-full border border-tertiary/20 text-tertiary-fixed">Gmail readonly</span>
@@ -57,19 +64,19 @@
                 <div class="lg:col-span-5 bg-surface-container-low rounded-xl border border-outline-variant/15 p-5 sm:p-6 shadow-2xl">
                     <div class="flex items-center justify-between mb-6">
                         <div class="flex gap-2"><span class="w-3 h-3 rounded-full bg-tertiary/50"></span><span class="w-3 h-3 rounded-full bg-primary/40"></span><span class="w-3 h-3 rounded-full bg-secondary/50"></span></div>
-                        <span class="font-label text-[10px] uppercase tracking-widest text-outline">example.com</span>
+                        <span class="font-label text-[11px] uppercase tracking-widest text-outline">example.com</span>
                     </div>
                     <div class="grid grid-cols-3 gap-3 mb-3">
-                        <div class="rounded-lg bg-surface-container-lowest p-4"><p class="text-[10px] uppercase tracking-wider text-outline mb-2">Messages</p><p class="font-headline text-2xl font-bold">12.4k</p></div>
-                        <div class="rounded-lg bg-surface-container-lowest p-4"><p class="text-[10px] uppercase tracking-wider text-outline mb-2">Pass rate</p><p class="font-headline text-2xl font-bold text-secondary">97.8%</p></div>
-                        <div class="rounded-lg bg-surface-container-lowest p-4"><p class="text-[10px] uppercase tracking-wider text-outline mb-2">Sources</p><p class="font-headline text-2xl font-bold">18</p></div>
+                        <div class="rounded-lg bg-surface-container-lowest p-4"><p class="text-[11px] uppercase tracking-wider text-outline mb-2">Messages</p><p class="font-headline text-2xl font-bold">12.4k</p></div>
+                        <div class="rounded-lg bg-surface-container-lowest p-4"><p class="text-[11px] uppercase tracking-wider text-outline mb-2">Pass rate</p><p class="font-headline text-2xl font-bold text-secondary">97.8%</p></div>
+                        <div class="rounded-lg bg-surface-container-lowest p-4"><p class="text-[11px] uppercase tracking-wider text-outline mb-2">Sources</p><p class="font-headline text-2xl font-bold">18</p></div>
                     </div>
                     <div class="rounded-lg bg-surface-container-lowest p-4 space-y-4">
                         <div class="flex items-center justify-between"><span class="text-sm">DMARC policy</span><span class="text-secondary text-xs">quarantine</span></div>
                         <div class="h-2 bg-surface-container-high rounded overflow-hidden"><div class="h-full w-[78%] bg-secondary rounded"></div></div>
                         <div class="flex items-center justify-between"><span class="text-sm">SPF posture</span><span class="text-primary text-xs">valid · 7 lookups</span></div>
                         <div class="h-2 bg-surface-container-high rounded overflow-hidden"><div class="h-full w-[64%] bg-primary rounded"></div></div>
-                        <div class="flex items-center gap-2 text-xs text-tertiary"><span class="material-symbols-outlined text-base">warning</span>1 unauthenticated sending source</div>
+                        <div class="flex items-center gap-2 text-xs text-tertiary"><span aria-hidden="true" class="material-symbols-outlined text-base">warning</span>1 unauthenticated sending source</div>
                     </div>
                 </div>
             </div>
@@ -79,12 +86,12 @@
             <div class="max-w-7xl mx-auto">
                 <div class="max-w-2xl mb-14"><p class="font-label text-xs text-primary uppercase tracking-[0.25em] mb-4">What it does</p><h2 class="font-headline text-4xl sm:text-5xl font-bold tracking-tight">Email authentication evidence, made readable.</h2></div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    <article class="bg-surface-container-high rounded-xl p-8 border border-outline-variant/10"><span class="material-symbols-outlined text-4xl text-primary mb-5">upload_file</span><h3 class="font-headline text-xl font-bold mb-3">Parse real reports</h3><p class="text-on-surface-variant leading-relaxed">Upload XML, ZIP, or GZIP aggregate reports and summarize volume, IP sources, and SPF/DKIM outcomes.</p></article>
-                    <article class="bg-surface-container-high rounded-xl p-8 border border-outline-variant/10"><span class="material-symbols-outlined text-4xl text-secondary mb-5">dns</span><h3 class="font-headline text-xl font-bold mb-3">Check live DNS</h3><p class="text-on-surface-variant leading-relaxed">Inspect public DMARC and SPF records and flag missing records, monitoring-only policy, unsafe <code>+all</code>, and suspicious sources.</p></article>
-                    <article class="bg-surface-container-high rounded-xl p-8 border border-outline-variant/10"><span class="material-symbols-outlined text-4xl text-tertiary mb-5">mail_lock</span><h3 class="font-headline text-xl font-bold mb-3">Import from Gmail</h3><p class="text-on-surface-variant leading-relaxed">Optionally pull matching attachments with read-only access, live progress, scheduled local runs, and duplicate prevention.</p></article>
-                    <article class="bg-surface-container-high rounded-xl p-8 border border-outline-variant/10"><span class="material-symbols-outlined text-4xl text-secondary mb-5">encrypted</span><h3 class="font-headline text-xl font-bold mb-3">Keep credentials separate</h3><p class="text-on-surface-variant leading-relaxed">Gmail secrets and refresh tokens are encrypted locally; the encryption key is never stored alongside them.</p></article>
-                    <article class="bg-surface-container-high rounded-xl p-8 border border-outline-variant/10"><span class="material-symbols-outlined text-4xl text-primary mb-5">database</span><h3 class="font-headline text-xl font-bold mb-3">Own the data</h3><p class="text-on-surface-variant leading-relaxed">There is no hosted account or shared database. Docker volumes or the local data directory hold the reports.</p></article>
-                    <article class="bg-surface-container-high rounded-xl p-8 border border-outline-variant/10"><span class="material-symbols-outlined text-4xl text-tertiary mb-5">ios_share</span><h3 class="font-headline text-xl font-bold mb-3">Export cleanly</h3><p class="text-on-surface-variant leading-relaxed">Portable JSON exports include domains and parsed reports while deliberately excluding credentials and import metadata.</p></article>
+                    <article class="bg-surface-container-high rounded-xl p-8 border border-outline-variant/10"><span aria-hidden="true" class="material-symbols-outlined text-4xl text-primary mb-5">upload_file</span><h3 class="font-headline text-xl font-bold mb-3">Parse real reports</h3><p class="text-on-surface-variant leading-relaxed">Upload XML, ZIP, or GZIP aggregate reports and summarize volume, IP sources, and SPF/DKIM outcomes.</p></article>
+                    <article class="bg-surface-container-high rounded-xl p-8 border border-outline-variant/10"><span aria-hidden="true" class="material-symbols-outlined text-4xl text-secondary mb-5">dns</span><h3 class="font-headline text-xl font-bold mb-3">Check live DNS</h3><p class="text-on-surface-variant leading-relaxed">Inspect public DMARC and SPF records and flag missing records, monitoring-only policy, unsafe <code>+all</code>, and suspicious sources.</p></article>
+                    <article class="bg-surface-container-high rounded-xl p-8 border border-outline-variant/10"><span aria-hidden="true" class="material-symbols-outlined text-4xl text-tertiary mb-5">mail_lock</span><h3 class="font-headline text-xl font-bold mb-3">Import from Gmail</h3><p class="text-on-surface-variant leading-relaxed">Optionally pull matching attachments with read-only access, live progress, scheduled local runs, and duplicate prevention.</p></article>
+                    <article class="bg-surface-container-high rounded-xl p-8 border border-outline-variant/10"><span aria-hidden="true" class="material-symbols-outlined text-4xl text-secondary mb-5">encrypted</span><h3 class="font-headline text-xl font-bold mb-3">Keep credentials separate</h3><p class="text-on-surface-variant leading-relaxed">Gmail secrets and refresh tokens are encrypted locally; the encryption key is never stored alongside them.</p></article>
+                    <article class="bg-surface-container-high rounded-xl p-8 border border-outline-variant/10"><span aria-hidden="true" class="material-symbols-outlined text-4xl text-primary mb-5">database</span><h3 class="font-headline text-xl font-bold mb-3">Own the data</h3><p class="text-on-surface-variant leading-relaxed">There is no hosted account or shared database. Docker volumes or the local data directory hold the reports.</p></article>
+                    <article class="bg-surface-container-high rounded-xl p-8 border border-outline-variant/10"><span aria-hidden="true" class="material-symbols-outlined text-4xl text-tertiary mb-5">ios_share</span><h3 class="font-headline text-xl font-bold mb-3">Export cleanly</h3><p class="text-on-surface-variant leading-relaxed">Portable JSON exports include domains and parsed reports while deliberately excluding credentials and import metadata.</p></article>
                 </div>
             </div>
         </section>
